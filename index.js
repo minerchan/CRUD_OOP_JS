@@ -20,7 +20,6 @@ class MenuItem {
 
     const editarBtn = document.createElement("button");
     editarBtn.className = "editar";
-    editarBtn.addEventListener("click", () => this.editar());
 
     editarBtn.addEventListener("click", () => {
       const novoPreco = prompt(`Editar o preço de ${this.nome}:`, this.preco);
@@ -68,6 +67,15 @@ class MenuItem {
   }
 }
 
+MenuItem.prototype.excluir = function () {
+  const elemento = document.querySelector(
+    `.menu-item[data-nome="${this.nome}"]`
+  );
+  if (elemento) {
+    elemento.remove();
+  }
+};
+
 // Evento de envio do formulário para adicionar um novo item ao menu
 document.querySelector("#form").addEventListener("submit", (event) => {
   event.preventDefault();
@@ -97,3 +105,7 @@ niguiri.Read();
 niguiriKani.Read();
 Temaki.Read();
 CombinadoKafu.Read();
+CombinadoKafu.Read();
+
+// Usando prototype
+CombinadoKafu.excluir();

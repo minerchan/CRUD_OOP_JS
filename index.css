@@ -69,7 +69,7 @@ form button {
        column-gap: 2rem;
   row-gap: 2rem;
   grid-template-rows: 21rem;
-  justify-content: space-around;
+  justify-content: center;
 }
 .menu .menu-item {
   border: 2px solid rgba(0, 0, 0, 0.2);
